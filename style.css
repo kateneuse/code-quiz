@@ -1,0 +1,15 @@
+a {color: purple;
+}
+a:hover {color: turquoise;}
+#container {
+    text-align: center;
+}
+#timer {
+    float: right;
+}
+#start {
+    background-color: purple;
+    color: white;
+    border-radius: 7px;
+    font-size: 15px;
+}
