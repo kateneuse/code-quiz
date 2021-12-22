@@ -1,3 +1,4 @@
+// questions, choices, answers 
 var questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -26,12 +27,10 @@ var questions = [
     },
 
 ];
-// Declared variables
 var score = 0;
 var questionIndex = 0;
 
-// Start working code 
-// Declared variables
+
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
 var quiz = document.querySelector("#quiz");
@@ -39,16 +38,16 @@ var wrapper = document.querySelector("#wrapper");
 
 // Seconds left is 15 seconds per question:
 var secondsLeft = 76;
-// Holds interval time
+
 var interval = 0;
-// Holds penalty time
+
 var penalty = 10;
-// Creates new element
+
 var ulCreate = document.createElement("ul");
 
-// Triggers timer on button, shows user a display on the screen
+// when button is clicked, timer starts
 timer.addEventListener("click", function () {
-    // We are checking zero because its originally set to zero
+
     if (interval === 0) {
         interval = setInterval(function () {
             secondsLeft--;
@@ -66,17 +65,17 @@ timer.addEventListener("click", function () {
 
 // Renders questions and choices to page: 
 function render(questionIndex) {
-    // Clears existing data 
-        quiz.innerHTML = "";
+
+    quiz.innerHTML = "";
     ulCreate.innerHTML = "";
-    // For loops to loop through all info in array
+
     for (var i = 0; i < questions.length; i++) {
         // Appends question title only
         var userQuestion = questions[questionIndex].title;
         var userChoices = questions[questionIndex].choices;
         quiz.textContent = userQuestion;
     }
-    // New for each for question choices
+    // 
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
@@ -85,7 +84,7 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
-// Event to compare choices with answer
+// compares choices with answer
 function compare(event) {
     var element = event.target;
 
@@ -109,7 +108,7 @@ function compare(event) {
     questionIndex++;
 
     if (questionIndex >= questions.length) {
-        // All done will append last page with user stats
+        // 
         allDone();
         createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
     } else {
@@ -169,7 +168,7 @@ function allDone() {
 
     quiz.appendChild(createSubmit);
 
-    // Event listener to capture initials and local storage for initials and score
+    // Event listener to capture initials 
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
 
@@ -192,7 +191,7 @@ function allDone() {
             allScores.push(finalScore);
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
-            // Travels to final page
+            // sends to final page
             window.location.replace("./HighScores.html");
         }
     });

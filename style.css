@@ -1,13 +1,20 @@
+/* changing "View Highscores" to purple*/
 a {color: purple;
 }
+/* when hover over view highscores change to turquoise */
 a:hover {color: turquoise;}
-#container {
+
+/* aligning everything in the wrapper to center*/
+#wrapper {
     text-align: center;
 }
-#timer {
+/* having the timer float to the right side of screen*/
+#currentTime{
     float: right;
 }
-#start {
+
+/*style for Start Quiz button*/
+#startTime {
     background-color: purple;
     color: white;
     border-radius: 7px;
