@@ -7,33 +7,30 @@
     <link rel="stylesheet" href="./style.css">
     <title>Code Quiz</title>
 </head>
-<header>
-    <a href="highscores.html">View Highscores</a>
-    <div id="timer">
-            <div class="timer-text"> Time: </div>
-            <div class="timer-count">75</div>
-
-    </div>
-</header>
+<title>Code Quiz</title>
+</head>
 <body>
-    <div id="container">
-        <div id="timer">
-
+    <a href="HighScores.html">View Highscores</a>
+    
+    <div id="wrapper">
+        <!-- timer -->
+        <div id="currentTime"></div>
+        <!-- quiz -->
+        <div id="quiz">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                answers
+                will penalize your score/time by ten seconds!</p>
+            <ul id="choices"></ul>
+            <!-- Buttons -->
+            <button id="startTime">Start Quiz</button>
         </div>
-
-        <div id="intro">
-            <h1>Coding Quiz</h1>
-            <p>
-                Try to answer questions before the timer runs out! 
-            </p>
-        </div>
-            <div id="questions"></div>
-
-            <button id="start">Start Quiz</button>
 
     </div>
 
 
-<script src="javascript.js"></script>
+    <script src="javascript.js"></script>
+
+
 </body>
 </html>
